@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { v4 as uuid } from 'uuid';
+import s from './form.module.scss';
 
 const INITIAL_STATE = { name: '', number: '' };
 
@@ -24,10 +25,11 @@ export default class Form extends Component {
     const { name, number } = this.state;
     const { handleSubmit, handleInputValue } = this;
     return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name
+      <form className={s.form} onSubmit={handleSubmit}>
+        <label className={s.formLabel}>
+          <span>Name</span>
           <input
+            className={s.forminput}
             type="text"
             name="name"
             value={name}
@@ -37,8 +39,10 @@ export default class Form extends Component {
             onChange={handleInputValue}
           />
         </label>
-        <label>
+        <label className={s.formLabel}>
+          <span>Number</span>
           <input
+            className={s.forminput}
             type="tel"
             name="number"
             value={number}
@@ -48,7 +52,9 @@ export default class Form extends Component {
             onChange={handleInputValue}
           />
         </label>
-        <button type="submit">ADD CONTACT</button>
+        <button className={s.btn} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }
