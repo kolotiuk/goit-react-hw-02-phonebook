@@ -1,12 +1,12 @@
 const ContactsList = ({ contacts }) => {
   return (
-    <ol>
+    <ul>
       {contacts.map(el => (
         <li key={el.id}>
-          {el.name}
+          {el.name}: {el.number}
         </li>
       ))}
-    </ol>
+    </ul>
   );
 };
 

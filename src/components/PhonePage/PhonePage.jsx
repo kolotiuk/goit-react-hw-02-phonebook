@@ -5,6 +5,7 @@ import ContactsList from 'components/ContactsList/ContactsList';
 export default class PhonePage extends Component {
   state = {
     contacts: [],
+    number: '',
   };
 
   handleAddContact = contact =>
