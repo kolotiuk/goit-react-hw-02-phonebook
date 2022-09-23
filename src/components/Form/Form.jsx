@@ -12,8 +12,8 @@ export default class Form extends Component {
     this.reset();
   };
 
-  handleInputValue = event => {
-    const { name, value } = event.target;
+  handleInputValue = e => {
+    const { name, value } = e.target;
 
     this.setState({ [name]: value });
   };
