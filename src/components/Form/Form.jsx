@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { v4 as uuid } from 'uuid';
 import s from './form.module.scss';
+import PropTypes from 'prop-types';
 
 const INITIAL_STATE = { name: '', number: '' };
 
 export default class Form extends Component {
   state = INITIAL_STATE;
+  static propTypes = {
+    handleAddContact: PropTypes.func.isRequired,
+  };
 
   handleSubmit = e => {
     e.preventDefault();

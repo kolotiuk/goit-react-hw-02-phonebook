@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './contactsList.module.scss';
 
 const ContactsList = ({ contacts, handleDelete }) => {
@@ -16,3 +17,14 @@ const ContactsList = ({ contacts, handleDelete }) => {
 };
 
 export default ContactsList;
+
+ContactsList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+  handleDelete: PropTypes.func.isRequired,
+};
